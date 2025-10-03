@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Roller API Test</title>
+  </head>
+  <body>
+    <h1>Dice Roller API Test</h1>
+    <button onclick="rollDice(1)">Roll 1 Die</button>
+    <button onclick="rollDice(3)">Roll 3 Dice</button>
+    <pre id="output"></pre>
+
+    <script>
+      async function rollDice(count) {
+        const output = document.getElementById("output");
+        try {
+          const response = await fetch(
+            `https://<YOUR_AZURE_API_URL>/roll?count=${count}`
+          );
+          const data = await response.json();
+          output.textContent = JSON.stringify(data, null, 2);
+        } catch (err) {
+          output.textContent = `Error: ${err.message}`;
+        }
+      }
+    </script>
+  </body>
+</html>

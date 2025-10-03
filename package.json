@@ -1,0 +1,16 @@
+{
+  "name": "dice-roller",
+  "version": "1.0.0",
+  "description": "Node.js Dice Roller WebService with RESTful API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Sai Vihas Yadav Gaddam",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "keywords": []
+}
